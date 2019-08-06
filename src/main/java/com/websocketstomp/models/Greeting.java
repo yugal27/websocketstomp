@@ -1,8 +1,14 @@
 package com.websocketstomp.models;
 
-public class Greeting {
+import java.io.Serializable;
 
-    private String content;
+public class Greeting implements Serializable {
+
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String content;
 
     public Greeting() {
     }

@@ -12,7 +12,10 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
-        config.enableSimpleBroker("/topic");
+    	//available options /topic, /queue, /temp-topic, /temp-queue
+    	config.enableStompBrokerRelay("/temp-topic").setRelayHost("localhost").setRelayPort(61613);
+        //config.enableSimpleBroker("/topic");
+    	
         config.setApplicationDestinationPrefixes("/app");
     }
 
